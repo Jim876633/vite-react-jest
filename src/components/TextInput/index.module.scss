@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+  width: 20rem;
+
+  label {
+    white-space: nowrap;
+  }
+  .input_group {
+    position: relative;
+    width: 13rem;
+    input {
+      width: 100%;
+      border-radius: 0.2rem;
+      padding: 0.3rem;
+      border: 1px solid transparent;
+      &:focus {
+        outline: 1px solid transparent;
+        border: 1px solid green;
+        &.error {
+          border: 1px solid red;
+        }
+      }
+    }
+    .error {
+      border: 1px solid red;
+    }
+    .errorMsg {
+      position: absolute;
+      color: red;
+      justify-self: start;
+    }
+  }
+}

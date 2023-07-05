@@ -1,16 +1,24 @@
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 export const fetchPokeDetail = async (name: string) => {
-  const res = await fetch(apiUrl + name);
-  const data = await res.json();
-  return {
-    name,
-    imgUrl: data.sprites.front_shiny,
-  };
+  try {
+    const res = await fetch(apiUrl + name);
+    const data = await res.json();
+    return {
+      name,
+      imgUrl: data.sprites.front_shiny,
+    };
+  } catch (err) {
+    return err;
+  }
 };
 
 export const fetchPoke = async () => {
-  const res = await fetch(apiUrl + "?limit=10");
-  const data = await res.json();
-  return data.results;
+  try {
+    const res = await fetch(apiUrl + "?limit=10");
+    const data = await res.json();
+    return data.results;
+  } catch (err) {
+    return err;
+  }
 };

@@ -18,7 +18,7 @@ export const ApiPage = () => {
     return (
       <div>
         {data.map((el) => (
-          <div>
+          <div key={el.name}>
             <h3>
               <Link to={el.name}>{el.name}</Link>
             </h3>

@@ -17,11 +17,19 @@ export const TextInput = ({ label, ...props }: propsType) => {
           {...field}
           {...props}
           id={label}
+          data-testid={props.name}
           className={meta.touched && meta.error ? styled.error : ""}
         />
         <ErrorMessage
           name={props.name}
-          render={(msg: string) => <div className={styled.errorMsg}>{msg}</div>}
+          render={(msg: string) => (
+            <div
+              className={styled.errorMsg}
+              data-testid={`${props.name}-error`}
+            >
+              {msg}
+            </div>
+          )}
         />
       </div>
     </div>

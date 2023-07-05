@@ -7,14 +7,18 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "jest",
-    "coverage": "jest --coverage --watchAll",
+    "coverage": "jest --coverage ",
+    "coverage-all": "jest --coverage --collectCoverageFrom='src/**'",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "majestic": "npx majestic"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.19",
     "@types/react-modal": "^3.16.0",
     "formik": "^2.4.2",
+    "history": "^5.3.0",
+    "jest-fetch-mock": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",

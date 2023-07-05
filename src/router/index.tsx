@@ -5,12 +5,8 @@ import { Home } from "@/pages/HomePage";
 import { ModalPage } from "@/pages/ModalPage";
 import { Test } from "@/pages/Test";
 import { WizardFormPage } from "@/pages/WizardFormPage";
-import { Step1 } from "@/pages/WizardFormPage/components/Step1";
-import { Step2 } from "@/pages/WizardFormPage/components/Step2";
-import { Step3 } from "@/pages/WizardFormPage/components/Step3";
-import { Navigate, createBrowserRouter } from "react-router-dom";
 
-export const router = createBrowserRouter([
+export const routerConfig = [
   {
     path: "/",
     element: <Test />,
@@ -42,4 +38,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+];

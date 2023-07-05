@@ -1,10 +1,12 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import { router } from "@/router";
+import { routerConfig } from "@/router";
 import { ModalContextProvider } from "./context/ModalContext";
 import { Modal } from "./components/Modal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createBrowserRouter } from "react-router-dom";
 
+const router = createBrowserRouter(routerConfig);
 const queryClient = new QueryClient();
 
 function App() {

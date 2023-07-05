@@ -1,25 +1,9 @@
 import { Home } from "@/pages/HomePage";
+import { getHistoryInput } from "@/utiils/testing-function";
 import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import { MemoryHistory, createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
-
-const getHistoryInput = (pathname: string) => {
-  return [
-    {
-      hash: "",
-      pathname,
-      search: "",
-    },
-    undefined,
-    {
-      preventScrollReset: undefined,
-      relative: undefined,
-      replace: false,
-      state: undefined,
-    },
-  ];
-};
 
 describe("navbar testing", () => {
   let history: MemoryHistory;

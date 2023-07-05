@@ -7,11 +7,7 @@ describe("screen show", () => {
   let button: HTMLElement;
 
   beforeEach(async () => {
-    render(
-      <BrowserRouter>
-        <Test />
-      </BrowserRouter>
-    );
+    render(<Test />, { wrapper: BrowserRouter });
     button = await screen.findByRole("button");
   });
 

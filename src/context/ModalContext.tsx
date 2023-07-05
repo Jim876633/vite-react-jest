@@ -7,7 +7,7 @@ type ModalValueType = {
   content: string;
 };
 
-const ModalContext = createContext<ModalValueType>({} as ModalValueType);
+export const ModalContext = createContext<ModalValueType>({} as ModalValueType);
 
 export const useModalContext = () => {
   return useContext(ModalContext);

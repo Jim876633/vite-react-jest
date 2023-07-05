@@ -1,12 +1,9 @@
 import { useModalContext } from "@/context/ModalContext";
 import styled from "./index.module.scss";
+import { article1, article2 } from "./data/modal.data";
 
 export const ModalPage = () => {
   const { openModal } = useModalContext();
-  const article1 =
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus laboriosam quis suscipit? Voluptatem, commodi facere! Sequi totam atque molestias.";
-  const article2 =
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus laboriosam quis suscipit? Voluptatem, commodi facere! Sequi totam atque molestias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloribus laboriosam quis suscipit? Voluptatem, commodi facere! Sequi totam atque molestias.";
   return (
     <div className={styled.btn_list}>
       <button onClick={() => openModal(article1)}>Article1</button>

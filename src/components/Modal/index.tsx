@@ -10,8 +10,13 @@ export const Modal = () => {
       overlayClassName={styled.overlay}
       className={styled.modal}
       onRequestClose={closeModal}
+      ariaHideApp={false}
     >
-      <button className={styled.close_btn} onClick={closeModal}>
+      <button
+        data-testid='close-btn'
+        className={styled.close_btn}
+        onClick={closeModal}
+      >
         X
       </button>
       {content}

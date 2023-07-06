@@ -23,7 +23,11 @@ export const Progress = ({ step }: propsType) => {
   return (
     <div className={styled.row}>
       {steps.map((el) => (
-        <span className={el.id <= step ? styled.active : ""} key={el.id}>
+        <span
+          data-testid='step'
+          className={el.id <= step ? styled.active : ""}
+          key={el.id}
+        >
           {el.label}
         </span>
       ))}

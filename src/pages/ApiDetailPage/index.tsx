@@ -11,8 +11,10 @@ type pokeDetailType = {
 export const ApiDetailPage = () => {
   const { name } = useParams();
   const { isLoading, data } = useQuery<pokeDetailType>(
-    ["getPokeDetail", name],
-    () => fetchPokeDetail(name as string)
+    ["getPokeDetail"],
+    async () => {
+      return (await fetchPokeDetail(name as string)) as pokeDetailType;
+    }
   );
   if (isLoading) {
     return <p>Loading...</p>;

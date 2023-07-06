@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 type pokeType = {
   name: string;
-  url: string;
 };
 
 export const ApiPage = () => {

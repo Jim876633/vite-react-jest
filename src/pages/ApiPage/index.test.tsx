@@ -12,11 +12,9 @@ jest.mock("@tanstack/react-query", () => {
   const fakePoke = [
     {
       name: "foo",
-      imgUrl: "imgUrl1",
     },
     {
       name: "test",
-      imgUrl: "imgUrl2",
     },
   ];
   return {

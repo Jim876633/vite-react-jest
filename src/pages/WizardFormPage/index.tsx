@@ -1,4 +1,4 @@
-import { FormikHelpers, FormikProps } from "formik";
+import { FormikProps } from "formik";
 import { useState } from "react";
 import { Progress } from "./components/Progress";
 import { Wizard } from "./components/Wizard";

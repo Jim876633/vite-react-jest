@@ -1,6 +1,8 @@
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-export const fetchPokeDetail = async (name: string) => {
+export const fetchPokeDetail = async (
+  name: string
+): Promise<{ name: string; imgUrl: string } | unknown> => {
   try {
     const res = await fetch(apiUrl + name);
     const data = await res.json();

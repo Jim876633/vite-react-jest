@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import * as yup from "yup";
 
 export default (msg = "必填項目") =>

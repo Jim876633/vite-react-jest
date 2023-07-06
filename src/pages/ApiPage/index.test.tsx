@@ -52,7 +52,7 @@ describe("apiPage testing", () => {
   });
 
   it("render loading", async () => {
-    expect(screen.getByText(/loading.../i)).toBeInTheDocument;
+    expect(screen.getByText(/loading.../i)).toBeInTheDocument();
   });
 
   it("render poke data", async () => {
@@ -63,7 +63,6 @@ describe("apiPage testing", () => {
   it("click name like navigate to detail page", async () => {
     const link = screen.getAllByRole("link")[0];
     await user.click(link);
-    screen.debug();
     expect(history.push).toHaveBeenCalledWith(...getHistoryInput("/foo"));
   });
 });

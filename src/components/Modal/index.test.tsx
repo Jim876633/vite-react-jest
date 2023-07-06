@@ -10,11 +10,11 @@ describe("modal testing", () => {
     const { closeModal } = customModalRender(<Modal />, true);
     const closeBtn = screen.getByTestId("close-btn");
     await user.click(closeBtn);
-    expect(closeModal).toHaveBeenCalled;
+    expect(closeModal).toHaveBeenCalled();
   });
 
   it("show content correctly", async () => {
     customModalRender(<Modal />, true, "content");
-    expect(screen.getByText("content")).toBeInTheDocument;
+    expect(screen.getByText("content")).toBeInTheDocument();
   });
 });

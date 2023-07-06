@@ -3,20 +3,25 @@ import { initialValuesType, stepType, steps } from "../../steps";
 import styled from "./index.module.scss";
 
 type propsType = {
-  submitHandler: (value: any, helper: FormikHelpers<any>) => void;
+  goNext: (values: any) => void;
   initialValues: initialValuesType;
   step: number;
   goBack: (formik: FormikProps<any>) => void;
 };
 
-export const Wizard = ({
-  submitHandler,
-  initialValues,
-  step,
-  goBack,
-}: propsType) => {
+export const Wizard = ({ initialValues, step, goNext, goBack }: propsType) => {
   const stepInfo = steps.find((el) => el.step === step) as stepType;
   const isLastStep = step === 3;
+  const submitHandler = (values: any, { setTouched }: FormikHelpers<any>) => {
+    if (step !== 3) {
+      setTouched({});
+      goNext(values);
+      console.log("hi");
+    } else {
+      alert(JSON.stringify(values));
+    }
+  };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -32,7 +37,7 @@ export const Wizard = ({
                 Back
               </button>
             ) : null}
-            <button type='submit'>{isLastStep ? "Sumbit" : "Next"}</button>
+            <button type='submit'>{isLastStep ? "Submit" : "Next"}</button>
           </div>
         </Form>
       )}

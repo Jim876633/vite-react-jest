@@ -9,15 +9,6 @@ export const WizardFormPage = () => {
   const [initialValuesSnapShot, setInitialValuesSnapShot] =
     useState(initialValues);
 
-  const submitHandler = (values: any, { setTouched }: FormikHelpers<any>) => {
-    if (step !== 3) {
-      setTouched({});
-      goNext(values);
-    } else {
-      alert(JSON.stringify(values));
-    }
-  };
-
   const goNext = (values: any) => {
     if (step !== 3) {
       setStep((prev) => prev + 1);
@@ -37,9 +28,9 @@ export const WizardFormPage = () => {
       <h2>Wizard Form</h2>
       <Progress step={step} />
       <Wizard
-        submitHandler={submitHandler}
         initialValues={initialValuesSnapShot}
         step={step}
+        goNext={goNext}
         goBack={goBack}
       />
     </div>

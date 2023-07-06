@@ -47,6 +47,21 @@ export const steps = [
   },
 ];
 
-export const initialValues = steps.reduce((acc, step) => {
+export const initialValues = steps.reduce<initialValuesType>((acc, step) => {
   return { ...step.initialValue, ...acc };
-}, {});
+}, {} as initialValuesType);
+
+export type stepType = {
+  step: number;
+  initialValue: any;
+  validation: any;
+  component: () => JSX.Element;
+};
+
+export type initialValuesType = {
+  firstName: string;
+  lastName: string;
+  twId: string;
+  height: string;
+  weight: string;
+};

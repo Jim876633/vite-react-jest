@@ -1,31 +1,19 @@
+import { routerConfig } from "@/router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { render, screen } from "@testing-library/react";
-import { ApiDetailPage } from ".";
-
-jest.mock("@tanstack/react-query", () => {
-  const original = jest.requireActual("@tanstack/react-query");
-  const fakePokeDetail = {
-    name: "foo",
-    imgUrl: "imgUrl1",
-  };
-  return {
-    ...original,
-    useQuery: jest
-      .fn()
-      .mockReturnValueOnce({
-        isLoading: true,
-      })
-      .mockReturnValue({ isLoading: false, data: fakePokeDetail }),
-  };
-});
+import { render, screen, waitFor } from "@testing-library/react";
+import { RouterProvider, createMemoryRouter } from "react-router-dom";
 
 describe("testing ApiDetailPage", () => {
   beforeEach(() => {
     const client = new QueryClient();
 
+    const router = createMemoryRouter(routerConfig, {
+      initialEntries: ["/home/api/test1"],
+    });
+
     render(
       <QueryClientProvider client={client}>
-        <ApiDetailPage />
+        <RouterProvider router={router} />
       </QueryClientProvider>
     );
   });
@@ -34,8 +22,11 @@ describe("testing ApiDetailPage", () => {
   });
 
   it("render poke data", async () => {
-    screen.debug();
-    expect(screen.getByRole("img").getAttribute("src")).toBe("imgUrl1");
-    expect(screen.getByRole("heading").textContent).toBe("foo");
+    await waitFor(() => {
+      expect(screen.getByRole("heading").textContent).toBe("test1");
+      expect(screen.getByRole("img").getAttribute("src")).toBe(
+        "https://fakeimg.pl/300/"
+      );
+    });
   });
 });

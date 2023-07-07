@@ -1,3 +1,5 @@
+import { useQuery } from "@tanstack/react-query";
+
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 export const fetchPokeDetail = async (
@@ -23,4 +25,10 @@ export const fetchPoke = async () => {
   } catch (err) {
     return err;
   }
+};
+
+export const useFetchPoke = () => useQuery<pokeType[]>(["getPoke"], fetchPoke);
+
+type pokeType = {
+  name: string;
 };

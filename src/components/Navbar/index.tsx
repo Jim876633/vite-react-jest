@@ -1,7 +1,13 @@
+import { changeLanguage } from "i18next";
+import { ChangeEvent, ChangeEventHandler } from "react";
 import { Link } from "react-router-dom";
 import styled from "./index.module.scss";
 
 export const Navbar = () => {
+  const changeLangHandler = ((e: ChangeEvent<HTMLInputElement>) => {
+    changeLanguage(e.target.value);
+  }) as ChangeEventHandler;
+
   return (
     <ul className={styled.nav}>
       <li>
@@ -28,6 +34,12 @@ export const Navbar = () => {
         <Link to='/home/wizardForm'>
           Wizard Form<span style={{ margin: "0 .5rem" }}>|</span>
         </Link>
+      </li>
+      <li>
+        <select onChange={changeLangHandler} defaultValue='en'>
+          <option value='en'>English</option>
+          <option value='tw'>Chinese</option>
+        </select>
       </li>
     </ul>
   );

@@ -11,8 +11,8 @@ describe("screen show", () => {
     button = await screen.findByRole("button");
   });
 
-  it("show 'Vite + React' on the document", () => {
-    expect(screen.getByText("Vite + React")).toBeInTheDocument();
+  it("show 'hello' on the document", () => {
+    expect(screen.getByText("hello")).toBeInTheDocument();
   });
 
   it("show 'count is 0' on the initial button", async () => {

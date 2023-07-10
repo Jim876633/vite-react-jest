@@ -1,12 +1,14 @@
 import { Home } from "@/pages/HomePage";
 import { getHistoryInput } from "@/utiils/testing-function";
 import { render, screen } from "@testing-library/react";
-import user from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import { MemoryHistory, createMemoryHistory } from "history";
-import { Router } from "react-router-dom";
+import { BrowserRouter, Router } from "react-router-dom";
+import i18n from "i18next";
 
 describe("navbar testing", () => {
   let history: MemoryHistory;
+  const user = userEvent.setup();
   beforeEach(() => {
     history = createMemoryHistory();
     history.push = jest.fn();
@@ -49,5 +51,22 @@ describe("navbar testing", () => {
     expect(history.push).toHaveBeenCalledWith(
       ...getHistoryInput("/home/wizardForm")
     );
+  });
+});
+
+jest.mock("i18next");
+
+describe("language testing", () => {
+  it("change language call i18n.changeLanguage with correct value", async () => {
+    const user = userEvent.setup();
+    render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
+    const select = screen.getByRole("combobox");
+    await user.selectOptions(select, "tw");
+    expect(select).toHaveValue("tw");
+    expect(i18n.changeLanguage).toHaveBeenCalledWith("tw");
   });
 });

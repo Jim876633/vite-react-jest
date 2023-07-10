@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 
-export const handlers = [
+export default [
   // Handles a POST /login request
   rest.post('/', (req, res, ctx) => {
     return res(

@@ -27,8 +27,20 @@ export const fetchPoke = async () => {
   }
 };
 
-export const useFetchPoke = () => useQuery<pokeType[]>(["getPoke"], fetchPoke);
+const useFetchPoke = () => useQuery<pokeType[]>(["getPoke"], fetchPoke);
+
+const useFetchPokeDetail = (name: string) =>
+  useQuery<pokeDetailType>(["getPokeDetail"], async () => {
+    return (await fetchPokeDetail(name)) as pokeDetailType;
+  });
+
+export { useFetchPoke, useFetchPokeDetail };
 
 type pokeType = {
   name: string;
+};
+
+type pokeDetailType = {
+  name: string;
+  imgUrl: string;
 };

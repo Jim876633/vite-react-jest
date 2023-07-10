@@ -1,21 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
+import { useFetchPokeDetail } from "@/api/fetchPoke";
 import { useParams } from "react-router-dom";
-import { fetchPokeDetail } from "@/api/fetchPoke";
 import styled from "./index.module.scss";
-
-type pokeDetailType = {
-  name: string;
-  imgUrl: string;
-};
 
 export const ApiDetailPage = () => {
   const { name } = useParams();
-  const { isLoading, data } = useQuery<pokeDetailType>(
-    ["getPokeDetail"],
-    async () => {
-      return (await fetchPokeDetail(name as string)) as pokeDetailType;
-    }
-  );
+  const { isLoading, data } = useFetchPokeDetail(name as string);
   if (isLoading) {
     return <p>Loading...</p>;
   }

@@ -1,14 +1,9 @@
 // import { useFetchPoke } from "@/api/fetchPoke";
-import { fetchPoke } from "@/api/fetchPoke";
-import { useQuery } from "@tanstack/react-query";
+import { useFetchPoke } from "@/api/fetchPoke";
 import { Link } from "react-router-dom";
 
 export const ApiPage = () => {
-  // const { isLoading, data } = useFetchPoke();
-  const { isLoading, data } = useQuery<{ name: string }[]>(
-    ["getPoke"],
-    fetchPoke
-  );
+  const { isLoading, data } = useFetchPoke();
 
   if (isLoading) {
     return <p>Loading...</p>;

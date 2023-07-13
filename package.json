@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://jim876633.github.io/vite-react-jest",
   "scripts": {
     "dev": "vite",
     "start": "npm run dev",
@@ -12,8 +13,7 @@
     "coverage-all": "jest --coverage --collectCoverageFrom='src/**'",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "majestic": "npx majestic",
-    "homepage": "https://jim876633.github.io/vite-react-jest"
+    "majestic": "npx majestic"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.19",

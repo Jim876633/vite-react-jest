@@ -32,7 +32,6 @@ describe("form input testing", () => {
       JSON.stringify({
         firstName: "John",
         lastName: "Tim",
-        gender: "",
         twId: "Q123701111",
       })
     );

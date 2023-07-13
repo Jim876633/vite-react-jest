@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import { Test } from ".";
 import { BrowserRouter } from "react-router-dom";
+import "@/i18n";
 
 describe("screen show", () => {
   let button: HTMLElement;
@@ -12,7 +13,7 @@ describe("screen show", () => {
   });
 
   it("show 'hello' on the document", () => {
-    expect(screen.getByText("hello")).toBeInTheDocument();
+    expect(screen.getByText("Hello !")).toBeInTheDocument();
   });
 
   it("show 'count is 0' on the initial button", async () => {

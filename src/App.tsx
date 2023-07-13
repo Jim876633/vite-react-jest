@@ -6,7 +6,9 @@ import { Modal } from "./components/Modal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter } from "react-router-dom";
 
-const router = createBrowserRouter(routerConfig);
+const router = createBrowserRouter(routerConfig, {
+  basename: import.meta.env.BASE_URL,
+});
 const queryClient = new QueryClient();
 
 function App() {

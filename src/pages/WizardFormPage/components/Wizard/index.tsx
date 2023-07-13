@@ -16,7 +16,6 @@ export const Wizard = ({ initialValues, step, goNext, goBack }: propsType) => {
     if (step !== 3) {
       setTouched({});
       goNext(values);
-      console.log("hi");
     } else {
       alert(JSON.stringify(values));
     }

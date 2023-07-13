@@ -5,11 +5,12 @@ import { Home } from "@/pages/HomePage";
 import { ModalPage } from "@/pages/ModalPage";
 import { Test } from "@/pages/Test";
 import { WizardFormPage } from "@/pages/WizardFormPage";
+import { Navigate } from "react-router-dom";
 
 export const routerConfig = [
   {
     path: "/",
-    element: <Test />,
+    element: <Navigate to='/home' />,
   },
   {
     path: "home",

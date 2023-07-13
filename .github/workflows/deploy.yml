@@ -50,6 +50,7 @@ jobs:
           from: ${{ secrets.EMAIL_USERNAME }}
   # Single deploy job since we're just deploying
   deploy:
+    if: ${{ success() }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

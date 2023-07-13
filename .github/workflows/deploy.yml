@@ -37,7 +37,7 @@ jobs:
       - name: test
         run: npm run test
       - name: echo
-        run: echo:${{ secrets.EMAIL_USERNAME }}}
+        run: echo:'${{ secrets.EMAIL_USERNAME }}'
       - name: send email
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v2

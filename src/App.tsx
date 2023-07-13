@@ -1,12 +1,11 @@
-import { RouterProvider } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import "./App.css";
 import { routerConfig } from "@/router";
 import { ModalContextProvider } from "./context/ModalContext";
 import { Modal } from "./components/Modal";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { createBrowserRouter } from "react-router-dom";
 
-const router = createBrowserRouter(routerConfig, {
+const router = createHashRouter(routerConfig, {
   basename: import.meta.env.BASE_URL,
 });
 const queryClient = new QueryClient();

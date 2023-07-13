@@ -12,7 +12,8 @@
     "coverage-all": "jest --coverage --collectCoverageFrom='src/**'",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "majestic": "npx majestic"
+    "majestic": "npx majestic",
+    "homepage": "https://jim876633.github.io/vite-react-jest"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.19",

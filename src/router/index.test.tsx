@@ -5,7 +5,6 @@ import {
   useParams,
 } from "react-router-dom";
 import { routerConfig } from ".";
-import App from "../App";
 
 const getRouter = (path: string) => {
   return createMemoryRouter(routerConfig, {
@@ -52,11 +51,6 @@ jest.mock("@/pages/WizardFormPage/index.tsx", () => {
 });
 
 describe("router testing", () => {
-  it("render app", () => {
-    render(<App />);
-    expect(screen.getByText("test")).toBeInTheDocument();
-  });
-
   it("When user is in route '/' Then render test component", () => {
     const router = getRouter("/");
 

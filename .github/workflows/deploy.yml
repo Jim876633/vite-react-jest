@@ -34,8 +34,6 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm install
-      - name: echo
-        run: echo:"${{ secrets.EMAIL_USERNAME }}"
       - name: test
         run: npm run test
       - name: send email

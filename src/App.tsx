@@ -8,6 +8,8 @@ import { ModalContextProvider } from "./context/ModalContext";
 const router = createBrowserRouter(routerConfig, {
   basename: import.meta.env.BASE_URL,
 });
+
+console.log(import.meta.env.BASE_URL);
 const queryClient = new QueryClient();
 
 function App() {

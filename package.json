@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jim876633.github.io/vite-react-jest",
+  "homepage": "https://jim876633.github.io/vite-react-jest/",
   "scripts": {
     "dev": "vite",
     "start": "npm run dev",

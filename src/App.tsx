@@ -6,11 +6,9 @@ import { Modal } from "./components/Modal";
 import { ModalContextProvider } from "./context/ModalContext";
 
 const router = createBrowserRouter(routerConfig, {
-  basename: import.meta.env.DEV ? "/" : "/vite-react-jest/",
+  basename: import.meta.env.BASE_URL,
 });
-console.log(import.meta.env.DEV);
 
-console.log(import.meta.env.BASE_URL);
 const queryClient = new QueryClient();
 
 function App() {

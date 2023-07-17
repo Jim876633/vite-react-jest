@@ -12,8 +12,9 @@
   position: relative;
   background-color: white;
   border-radius: 1rem;
-  width: 30rem;
+  width: min(50vw, 30rem);
   height: fit-content;
+  margin: auto;
   padding: 3rem;
   color: black;
 }

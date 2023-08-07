@@ -25,7 +25,7 @@ describe("testing ApiDetailPage", () => {
     await waitFor(() => {
       expect(screen.getByRole("heading").textContent).toBe("test1");
       expect(screen.getByRole("img").getAttribute("src")).toBe(
-        "https://fakeimg.pl/300/"
+        "https://fakeimg.pl/200/"
       );
     });
   });

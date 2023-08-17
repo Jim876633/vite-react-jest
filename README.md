@@ -5,6 +5,7 @@ use vite build react with jest
 ## Library
 
 - vite
+- vite-tsconfig-paths
 - jest
 - @testing-library/jest-dom
 - @testing-library/react
@@ -14,3 +15,7 @@ use vite build react with jest
 - ts-node
 - identity-obj-proxy : mock css
 - jest-environment-jsdom
+- msw
+- @swc/core
+- @swc/jest
+- @swc/wasm

@@ -16,7 +16,7 @@ export const Test = () => {
           <img src={reactLogo} className='logo react' alt='React logo' />
         </a>
       </div>
-      <h1>{t("hello")}</h1>
+      <h1>{t("home.__hello")}</h1>
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

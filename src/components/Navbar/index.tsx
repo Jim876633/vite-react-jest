@@ -36,6 +36,16 @@ export const Navbar = () => {
         </Link>
       </li>
       <li>
+        <Link to='/home/counterPage'>
+          Counter<span style={{ margin: "0 .5rem" }}>|</span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/home/todoPage'>
+          Todo<span style={{ margin: "0 .5rem" }}>|</span>
+        </Link>
+      </li>
+      <li>
         <select onChange={changeLangHandler} defaultValue='en'>
           <option value='en'>English</option>
           <option value='tw'>Chinese</option>

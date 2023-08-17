@@ -1,10 +1,12 @@
-import { Home } from "@/pages/HomePage";
+import { Home } from "@/pages/HomePage/Home";
 import { getHistoryInput } from "@/utiils/testing-function";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryHistory, createMemoryHistory } from "history";
-import { BrowserRouter, Router } from "react-router-dom";
 import i18n from "i18next";
+import { BrowserRouter, Router } from "react-router-dom";
+import { Navbar } from ".";
+import { HomePage } from "@/pages/HomePage";
 
 describe("navbar testing", () => {
   let history: MemoryHistory;
@@ -14,31 +16,31 @@ describe("navbar testing", () => {
     history.push = jest.fn();
     render(
       <Router location={history.location} navigator={history}>
-        <Home />
+        <Navbar />
       </Router>
     );
   });
 
   it("click form link goes to home page", async () => {
-    const formLink = screen.getByText("Home");
+    const formLink = screen.getByText(/home/i);
     await user.click(formLink);
-    expect(history.push).toHaveBeenCalledWith(...getHistoryInput("/home"));
+    expect(history.push).toHaveBeenCalledWith(...getHistoryInput("/home/"));
   });
 
   it("click form button go to home page", async () => {
-    const button = screen.getByText("Form");
+    const button = screen.getByText("form");
     await user.click(button);
     expect(history.push).toHaveBeenCalledWith(...getHistoryInput("/home/form"));
   });
 
   it("click api link goes to api page", async () => {
-    const apiLink = screen.getByText("Api");
+    const apiLink = screen.getByText(/api/i);
     await user.click(apiLink);
     expect(history.push).toHaveBeenCalledWith(...getHistoryInput("/home/api"));
   });
 
   it("click modal link goes to modal page", async () => {
-    const modalLink = screen.getByText("Modal");
+    const modalLink = screen.getByText(/modal/i);
     await user.click(modalLink);
     expect(history.push).toHaveBeenCalledWith(
       ...getHistoryInput("/home/modal")
@@ -46,7 +48,7 @@ describe("navbar testing", () => {
   });
 
   it("click wizardForm link goes to wizardForm page", async () => {
-    const wizardFormLink = screen.getByText("Wizard Form");
+    const wizardFormLink = screen.getByText(/WizardForm/i);
     await user.click(wizardFormLink);
     expect(history.push).toHaveBeenCalledWith(
       ...getHistoryInput("/home/wizardForm")
@@ -61,7 +63,7 @@ describe("language testing", () => {
     const user = userEvent.setup();
     render(
       <BrowserRouter>
-        <Home />
+        <HomePage />
       </BrowserRouter>
     );
     const select = screen.getByRole("combobox");

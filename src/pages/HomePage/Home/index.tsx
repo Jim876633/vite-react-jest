@@ -3,7 +3,7 @@ import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
 import { useTranslation } from "react-i18next";
 
-export const Test = () => {
+export const Home = () => {
   const [count, setCount] = useState(0);
   const { t } = useTranslation();
   return (

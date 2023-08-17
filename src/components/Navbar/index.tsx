@@ -19,10 +19,10 @@ export const Navbar = () => {
   const changeRouteToLink = (children: RouteType[], path = ""): ReactNode => {
     return children.map((child) => {
       if (child.children) return changeRouteToLink(child.children, child.path);
-      if (path && child.path && path !== "/" && !child.path?.includes("/:")) {
+      if (path && path !== "/" && !child.path?.includes("/:")) {
         return (
-          <Link key={child.path} to={`/${path}/${child.path}`}>
-            {child.path}
+          <Link key={child.path || ""} to={`/${path}/${child.path || ""}`}>
+            {child.path || "home"}
             <span style={{ margin: "0 .5rem" }}>|</span>
           </Link>
         );

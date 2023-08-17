@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
-import { Test } from ".";
+import { Home } from ".";
 import { BrowserRouter } from "react-router-dom";
 import "@/i18n";
 
@@ -8,7 +8,7 @@ describe("screen show", () => {
   let button: HTMLElement;
 
   beforeEach(async () => {
-    render(<Test />, { wrapper: BrowserRouter });
+    render(<Home />, { wrapper: BrowserRouter });
     button = await screen.findByRole("button");
   });
 

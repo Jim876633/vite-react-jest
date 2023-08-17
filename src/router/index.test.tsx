@@ -12,9 +12,9 @@ const getRouter = (path: string) => {
   });
 };
 
-jest.mock("@/pages/Test/index.tsx", () => {
+jest.mock("@/pages/HomePage/Home/index.tsx", () => {
   return {
-    Test: () => <div data-testid='test-component'>test</div>,
+    Home: () => <div data-testid='test-component'>test</div>,
   };
 });
 

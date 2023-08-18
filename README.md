@@ -19,3 +19,6 @@ use vite build react with jest
 - @swc/core
 - @swc/jest
 - @swc/wasm
+- @reduxjs/toolkit
+- react-redux
+- @faker-js/faker

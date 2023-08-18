@@ -1,3 +1,4 @@
 import pokeHandler from './poke.js'
+import itemListHandler from './itemList.js'
 
-export default [...pokeHandler]
+export default [...pokeHandler, ...itemListHandler]

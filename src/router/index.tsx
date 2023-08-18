@@ -8,6 +8,7 @@ import { Home } from "@/pages/HomePage/Home";
 import { TodoPage } from "@/pages/TodoPage";
 import { WizardFormPage } from "@/pages/WizardFormPage";
 import { Navigate } from "react-router-dom";
+import { RtkQueryPage } from "@/pages/RtkQueryPage";
 
 export const routerConfig = [
   {
@@ -46,6 +47,10 @@ export const routerConfig = [
       {
         path: "todoPage",
         element: <TodoPage />,
+      },
+      {
+        path: "RtkQueryPage",
+        element: <RtkQueryPage />,
       },
     ],
   },

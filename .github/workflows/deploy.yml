@@ -30,7 +30,7 @@ jobs:
       - name: Set up Node
         uses: oven-sh/setup-bun@v1
       - name: test
-        run: bun test
+        run: bun run test
       # - name: send email
       #   if: ${{ failure() }}
       #   uses: dawidd6/action-send-mail@v2

@@ -19,15 +19,6 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ModalContextProvider>
           <>
-            <button
-              className="133"
-              id="2323"
-              name="123323"
-              data-test="12"
-              data-id="2342"
-            >
-              click
-            </button>
             <Modal />
             <RouterProvider router={router} />
           </>

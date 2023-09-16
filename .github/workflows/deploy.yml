@@ -28,14 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "npm"
-      - name: Install dependencies
-        run: npm install
+        uses: oven-sh/setup-bun@v1
       - name: test
-        run: npm run test
+        run: bun test
       # - name: send email
       #   if: ${{ failure() }}
       #   uses: dawidd6/action-send-mail@v2

@@ -14,11 +14,6 @@ const router = createBrowserRouter(routerConfig, {
 const queryClient = new QueryClient();
 
 function App() {
-  const a = 1;
-  const b = { a: "1", b: "2" };
-  const c = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  const d = (x) => x + 1;
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>

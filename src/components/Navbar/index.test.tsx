@@ -1,4 +1,3 @@
-import { Home } from "@/pages/HomePage/Home";
 import { getHistoryInput } from "@/utiils/testing-function";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
